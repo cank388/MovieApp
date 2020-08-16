@@ -7,7 +7,8 @@
 //
 
 import UIKit
-
+//key=a163d3b6a3074aec0f4bd568cebe17da
+//https://api.themoviedb.org/3/movie/550?api_key=a163d3b6a3074aec0f4bd568cebe17da
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
