@@ -8,6 +8,8 @@ target 'MovieApp' do
   # Pods for MovieApp
   pod 'Kingfisher'
   pod 'IQKeyboardManager'
+  pod 'lottie-ios'
+
   target 'MovieAppTests' do
     inherit! :search_paths
     # Pods for testing

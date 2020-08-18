@@ -3,20 +3,24 @@ PODS:
   - Kingfisher (5.14.1):
     - Kingfisher/Core (= 5.14.1)
   - Kingfisher/Core (5.14.1)
+  - lottie-ios (3.1.8)
 
 DEPENDENCIES:
   - IQKeyboardManager
   - Kingfisher
+  - lottie-ios
 
 SPEC REPOS:
   trunk:
     - IQKeyboardManager
     - Kingfisher
+    - lottie-ios
 
 SPEC CHECKSUMS:
   IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
   Kingfisher: 8050bc6f7f68cbf3908bd04df7ccbac188f6d6d6
+  lottie-ios: 48fac6be217c76937e36e340e2d09cf7b10b7f5f
 
-PODFILE CHECKSUM: 0510fa63ac11efc15e410539e499a8c25dda7476
+PODFILE CHECKSUM: 8baa11df6cf0580c5652842e05e412511ee096f0
 
 COCOAPODS: 1.9.3

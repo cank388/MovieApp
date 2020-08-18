@@ -41,22 +41,95 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MovieVC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FMT-Aq-fwP">
-                                <rect key="frame" x="158" y="341" width="107" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="KaV-A4-vMg">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="WlG-Bm-cpX" id="FQh-E5-BWF"/>
+                                    <outlet property="delegate" destination="WlG-Bm-cpX" id="mO6-7u-tea"/>
+                                </connections>
+                            </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.59215686274509804" green="0.59215686274509804" blue="0.59215686274509804" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="KaV-A4-vMg" firstAttribute="bottom" secondItem="gpe-BU-NNL" secondAttribute="bottom" id="DTc-uw-ExY"/>
+                            <constraint firstItem="KaV-A4-vMg" firstAttribute="trailing" secondItem="gpe-BU-NNL" secondAttribute="trailing" id="qzB-s7-g1h"/>
+                            <constraint firstItem="KaV-A4-vMg" firstAttribute="top" secondItem="gpe-BU-NNL" secondAttribute="top" id="rT5-6S-77i"/>
+                            <constraint firstItem="KaV-A4-vMg" firstAttribute="leading" secondItem="gpe-BU-NNL" secondAttribute="leading" id="x1h-Gn-iAK"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="gpe-BU-NNL"/>
                     </view>
                     <navigationItem key="navigationItem" id="yJn-dR-QYc"/>
+                    <connections>
+                        <outlet property="tableView" destination="KaV-A4-vMg" id="W9Z-XG-Eax"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DgQ-6H-tLa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2700" y="-249.10714285714283"/>
+            <point key="canvasLocation" x="2698.5507246376815" y="-249.10714285714283"/>
+        </scene>
+        <!--Movie Detail View Controller-->
+        <scene sceneID="ZM8-vg-2d6">
+            <objects>
+                <viewController storyboardIdentifier="MovieDetailViewController" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fdh-3j-Aja" customClass="MovieDetailViewController" customModule="MovieApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aO8-WJ-qvu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="rzb-dr-3VR">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z1v-do-4xU">
+                                        <rect key="frame" x="8" y="52" width="398" height="400"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OSD-oC-qgI">
+                                                <rect key="frame" x="0.0" y="0.0" width="398" height="400"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="OSD-oC-qgI" secondAttribute="trailing" id="3SR-Zq-haW"/>
+                                            <constraint firstAttribute="bottom" secondItem="OSD-oC-qgI" secondAttribute="bottom" id="DaZ-bE-fic"/>
+                                            <constraint firstItem="OSD-oC-qgI" firstAttribute="leading" secondItem="Z1v-do-4xU" secondAttribute="leading" id="ibE-fI-uZ2"/>
+                                            <constraint firstItem="OSD-oC-qgI" firstAttribute="top" secondItem="Z1v-do-4xU" secondAttribute="top" id="qwf-76-gMl"/>
+                                            <constraint firstAttribute="height" constant="400" id="wkE-mV-2jK"/>
+                                        </constraints>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="HY8-0L-rrD">
+                                        <rect key="frame" x="8" y="452" width="398" height="402"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ul-j5-23q">
+                                                <rect key="frame" x="0.0" y="0.0" width="398" height="402"/>
+                                                <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="8" bottom="8" trailing="8"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="8" bottom="8" trailing="8"/>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="rzb-dr-3VR" firstAttribute="top" secondItem="aO8-WJ-qvu" secondAttribute="top" id="8hi-2u-38t"/>
+                            <constraint firstAttribute="bottom" secondItem="rzb-dr-3VR" secondAttribute="bottom" id="CVu-BS-5Sf"/>
+                            <constraint firstItem="rzb-dr-3VR" firstAttribute="leading" secondItem="NQc-UW-COy" secondAttribute="leading" id="EwP-f9-49F"/>
+                            <constraint firstItem="rzb-dr-3VR" firstAttribute="height" secondItem="aO8-WJ-qvu" secondAttribute="height" priority="250" id="H8y-j8-LEL"/>
+                            <constraint firstItem="rzb-dr-3VR" firstAttribute="width" secondItem="aO8-WJ-qvu" secondAttribute="width" id="JO4-lx-HtR"/>
+                            <constraint firstItem="rzb-dr-3VR" firstAttribute="trailing" secondItem="NQc-UW-COy" secondAttribute="trailing" id="xj7-c7-77X"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="NQc-UW-COy"/>
+                    </view>
+                    <connections>
+                        <outlet property="movieImageView" destination="OSD-oC-qgI" id="NGK-I3-vvS"/>
+                        <outlet property="overviewLabel" destination="2Ul-j5-23q" id="5PB-QZ-hZH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WpU-VB-nW3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3604.347826086957" y="-248.4375"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Lw8-a3-fVz">
