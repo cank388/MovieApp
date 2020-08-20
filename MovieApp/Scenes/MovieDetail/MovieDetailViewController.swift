@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import Kingfisher
+import WebKit
 
 class MovieDetailViewController:UIViewController{
     
@@ -49,4 +50,14 @@ class MovieDetailViewController:UIViewController{
             self.movieDetail = movieDetailResponse
         }
     }
+    
+    @IBAction func playButtonClicked(_ sender: UIButton) {
+        
+        let trailerVideoController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TrailerViewPlayer") as! TrailerViewPlayer
+        trailerVideoController.movieId = movieId
+
+//        self.navigationController?.pushViewController(trailerVideoController, animated: true)
+        self.navigationController?.showDetailViewController(trailerVideoController, sender: nil)
+    }
+    
 }

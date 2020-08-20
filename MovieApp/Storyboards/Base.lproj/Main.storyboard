@@ -80,26 +80,39 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z1v-do-4xU">
-                                        <rect key="frame" x="8" y="52" width="398" height="400"/>
+                                        <rect key="frame" x="0.0" y="44" width="414" height="400"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OSD-oC-qgI">
-                                                <rect key="frame" x="0.0" y="0.0" width="398" height="400"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OSD-oC-qgI">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="400"/>
                                             </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7zR-6l-aWR">
+                                                <rect key="frame" x="334" y="320" width="50" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="50" id="QqE-e5-u2P"/>
+                                                    <constraint firstAttribute="height" constant="50" id="zVP-ZF-iH3"/>
+                                                </constraints>
+                                                <state key="normal" image="play-button"/>
+                                                <connections>
+                                                    <action selector="playButtonClicked:" destination="fdh-3j-Aja" eventType="touchUpInside" id="QNa-D2-zdc"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="7zR-6l-aWR" secondAttribute="bottom" constant="30" id="043-yy-5zo"/>
                                             <constraint firstAttribute="trailing" secondItem="OSD-oC-qgI" secondAttribute="trailing" id="3SR-Zq-haW"/>
                                             <constraint firstAttribute="bottom" secondItem="OSD-oC-qgI" secondAttribute="bottom" id="DaZ-bE-fic"/>
+                                            <constraint firstAttribute="trailing" secondItem="7zR-6l-aWR" secondAttribute="trailing" constant="30" id="MIM-Zv-YKU"/>
                                             <constraint firstItem="OSD-oC-qgI" firstAttribute="leading" secondItem="Z1v-do-4xU" secondAttribute="leading" id="ibE-fI-uZ2"/>
                                             <constraint firstItem="OSD-oC-qgI" firstAttribute="top" secondItem="Z1v-do-4xU" secondAttribute="top" id="qwf-76-gMl"/>
                                             <constraint firstAttribute="height" constant="400" id="wkE-mV-2jK"/>
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="HY8-0L-rrD">
-                                        <rect key="frame" x="8" y="452" width="398" height="402"/>
+                                        <rect key="frame" x="0.0" y="444" width="414" height="410"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ul-j5-23q">
-                                                <rect key="frame" x="0.0" y="0.0" width="398" height="402"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="410"/>
                                                 <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="8" bottom="8" trailing="8"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -108,7 +121,7 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                                <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="8" bottom="8" trailing="8"/>
+                                <directionalEdgeInsets key="directionalLayoutMargins" top="0.0" leading="0.0" bottom="8" trailing="0.0"/>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -131,6 +144,54 @@
             </objects>
             <point key="canvasLocation" x="3604.347826086957" y="-248.4375"/>
         </scene>
+        <!--Trailer View Player-->
+        <scene sceneID="PxA-h6-bX3">
+            <objects>
+                <viewController storyboardIdentifier="TrailerViewPlayer" useStoryboardIdentifierAsRestorationIdentifier="YES" id="aCK-Gi-fJE" customClass="TrailerViewPlayer" customModule="MovieApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NlD-fJ-P2a">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="plY-Ad-uUN">
+                                <rect key="frame" x="0.0" y="68" width="414" height="828"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" video="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Nh-21-2Ul">
+                                <rect key="frame" x="30" y="30" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="018-mw-DBi"/>
+                                    <constraint firstAttribute="height" constant="30" id="cOA-z7-fD8"/>
+                                </constraints>
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <state key="normal" image="xmark.octagon.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="closeButtonClicked:" destination="aCK-Gi-fJE" eventType="touchUpInside" id="kcY-Y2-Hie"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="plY-Ad-uUN" firstAttribute="trailing" secondItem="OE8-YE-YVY" secondAttribute="trailing" id="Glc-IC-uLM"/>
+                            <constraint firstItem="plY-Ad-uUN" firstAttribute="leading" secondItem="OE8-YE-YVY" secondAttribute="leading" id="MJp-2t-E57"/>
+                            <constraint firstItem="plY-Ad-uUN" firstAttribute="top" secondItem="NlD-fJ-P2a" secondAttribute="top" constant="68" id="McM-dH-hbR"/>
+                            <constraint firstItem="5Nh-21-2Ul" firstAttribute="top" secondItem="NlD-fJ-P2a" secondAttribute="top" constant="30" id="drS-AH-Ax1"/>
+                            <constraint firstAttribute="bottom" secondItem="plY-Ad-uUN" secondAttribute="bottom" id="w30-zV-akM"/>
+                            <constraint firstItem="5Nh-21-2Ul" firstAttribute="leading" secondItem="OE8-YE-YVY" secondAttribute="leading" constant="30" id="wet-44-qNE"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="OE8-YE-YVY"/>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="plY-Ad-uUN" id="Xrl-Ir-B6u"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JMy-O4-4ei" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4476.811594202899" y="-243.08035714285714"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Lw8-a3-fVz">
             <objects>
@@ -149,11 +210,13 @@
             </objects>
             <point key="canvasLocation" x="868" y="75"/>
         </scene>
-        <!--Item 1-->
+        <!--Navigation Controller-->
         <scene sceneID="bWe-eH-hT0">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ph4-4D-DHU" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 1" id="FSP-gf-eFn"/>
+                    <tabBarItem key="tabBarItem" title="" image="tab-movies" id="FSP-gf-eFn">
+                        <color key="badgeColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ykl-JU-Lcu">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -168,11 +231,13 @@
             </objects>
             <point key="canvasLocation" x="1789.8550724637682" y="-249.10714285714283"/>
         </scene>
-        <!--Item 2-->
+        <!--Navigation Controller-->
         <scene sceneID="H6y-pv-Hkr">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tuV-CE-Xyg" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 2" id="E58-xT-7Yn"/>
+                    <tabBarItem key="tabBarItem" title="" image="tabbar_search" id="E58-xT-7Yn">
+                        <color key="badgeColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zwl-wg-htv">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -188,4 +253,10 @@
             <point key="canvasLocation" x="1789.8550724637682" y="397.76785714285711"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="play-button" width="128" height="128"/>
+        <image name="tab-movies" width="27" height="26"/>
+        <image name="tabbar_search" width="28" height="28"/>
+        <image name="xmark.octagon.fill" catalog="system" width="64" height="56"/>
+    </resources>
 </document>
